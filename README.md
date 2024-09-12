@@ -1,4 +1,4 @@
-# Silverstripe Disk Space Report
+# Silverstripe disk space report
 
 This module provides an admin only report that shows the disk space used by each table in the database.
 
