@@ -21,5 +21,5 @@ class DiskSpaceDatabaseTable extends DataObject
 
     private static string $table_name = 'DiskSpaceDatabaseTable';
 
-    private static string $default_sort = 'Size DESC';
+    private static string $default_sort = 'SizeMB DESC';
 }

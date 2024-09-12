@@ -22,7 +22,7 @@ class DiskSpaceJob extends AbstractQueuedJob
      */
     private static int $run_every_seconds = 86400;
 
-    public function getTitle()
+    public function getTitle(): string
     {
         return 'Disk space job';
     }
@@ -30,10 +30,11 @@ class DiskSpaceJob extends AbstractQueuedJob
     /**
      * Read disk space usage of the website
      */
-    public function process()
+    public function process(): void
     {
+        $this->createNextJob();
         $this->readDatabaseTableSizes();
-        $this->createNewJob();
+        $this->isComplete = true;
     }
 
     private function readDatabaseTableSizes(): void
@@ -45,12 +46,12 @@ class DiskSpaceJob extends AbstractQueuedJob
             $size = $table['Data_length'] + $table['Index_length'];
             DiskSpaceDatabaseTable::create([
                 'Name' => $name,
-                'SizeMB' => $size / 1024 / 1024,
+                'SizeMB' => round($size / 1024 / 1024, 2),
             ])->write();
         }
     }
 
-    private function createNewJob(): void
+    private function createNextJob(): void
     {
         $this->addMessage('Queueing the next ' . strtolower($this->getTitle()));
         $job = Injector::inst()->create(static::class);

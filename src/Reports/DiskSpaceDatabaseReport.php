@@ -11,7 +11,7 @@ class DiskSpaceDatabaseReport extends Report
 {
     protected $title = 'Disk space database report';
 
-    protected $description = 'Queries from the last dev/build';
+    protected $description = 'Disk space usage of every database table';
 
     public function sourceRecords()
     {
