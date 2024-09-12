@@ -1,0 +1,3 @@
+Symbiote\QueuedJobs\DataObjects\QueuedJobDescriptor:
+  extensions:
+    - Emteknetnz\DiskSpaceReport\Extensions\QueuedJobDescriptorExtension
