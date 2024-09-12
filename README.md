@@ -16,7 +16,9 @@ composer require emteknetnz/silverstripe-disk-space-report
 
 Once installed, you can view the report by going to the `Reports` section in the CMS. You must be an admin to view this report.
 
-A queued job will be created on the first `dev/build` which will calculate the disk space used by each table in the database. This job run immediately at first and after that will run every 24 hours to keep the data up to date.
+A queued job will be created on the first `dev/build` which will calculate the disk space used by each table in the database.
+
+This job will run immediately at first, and after that will run every 24 hours to keep the data up to date.
 
 ## Configuration
 
