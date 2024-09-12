@@ -1,0 +1,23 @@
+{
+    "name": "emteknetnz/silverstripe-disk-space-report",
+    "description": "Report showing disk space usage",
+    "type": "silverstripe-vendormodule",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Boyd"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.1",
+        "silverstripe/framework": "^4 || ^5",
+        "symbiote/silverstripe-queuedjobs": "^4 || ^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Emteknetnz\\DiskSpaceReport\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
