@@ -30,7 +30,7 @@ class DiskSpaceJob extends AbstractQueuedJob
 
     public function getTitle(): string
     {
-        return 'Disk space job';
+        return 'Compile disk space report';
     }
 
     public function process(): void
